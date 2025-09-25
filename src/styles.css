@@ -12,7 +12,7 @@ body {
   background-color: #484848;
   border-radius: 8px;  
   padding: 2%; 
-  width: 320px;
+  /*width: 320px;*/
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 4px 20px rgba(0, 0, 0, 0.1); 
   border: 1px solid #333; 
   display: flex;
@@ -37,10 +37,8 @@ body {
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 10px;
-  width: 320px;
-  max-width: 320px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
 }
 
 
@@ -82,12 +80,14 @@ button.operator {
 button.operator:hover {
   background-color: #ff6347;
 }
-
+button[data-value="0"] {
+  grid-column: span 3;
+}
 
 button[data-action="igual"] {
   background-color: #4caf50;
   color: white;
-  grid-column: span 4;
+  grid-column: span 3;
 }
 
 button[data-action="igual"]:hover {
@@ -95,10 +95,6 @@ button[data-action="igual"]:hover {
 }
 
 
-button[data-action="C"] {
-  background-color: #f44336;
-  color: white;
-}
 
 button[data-action="C"]:hover {
   background-color: #e53935;
