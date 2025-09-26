@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 document.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("operacion");
     const buttonsContainer = document.querySelector(".buttons");
@@ -48,7 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     display.textContent = "0";
                 }
                 else if (target.textContent == "√") {
-                    display.textContent += "√(";
+                    display.textContent += "√(" + digitos + ")";
+                }
+                else if ((digitos < 1) && (target.textContent == "√" || target.textContent == "+" ||
+                    target.textContent == "/" || target.textContent == "*")) {
+                    display.textContent = "";
                 }
                 else {
                     display.textContent += target.textContent;
@@ -68,4 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function filtrarCalculo(calculo) {
         calculo.replace("√", "Math.sqrt");
     }
+});
+(_a = document.getElementById('toggle-dark-mode')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
 });

@@ -40,7 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (target.textContent == "C") {
           display.textContent = "0";
         } else if (target.textContent == "√") {
-          display.textContent += "√(";
+          display.textContent += "√(" + digitos + ")";
+        }else if ((digitos<1) && (target.textContent == "√" || target.textContent == "+" || 
+            target.textContent == "/" || target.textContent == "*")){
+            display.textContent = "";
         } else {
           display.textContent += target.textContent!;
         }
